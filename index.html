@@ -71,19 +71,19 @@ span.psw {
 
 
 
-<form action="inicio">
+<form action="inicio.html">
   <div class="imgcontainer">
     <img src="ceibal-logo.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label for="uname"><b>Usuario</b></label>
-    <input type="text" placeholder="Ingrese el usuario" name="uname" required>
+    <input type="text" placeholder="Ingrese el usuario" id="uname" name="uname" required>
 
     <label for="psw"><b>Contraseña</b></label>
-    <input type="password" placeholder="Ingrese la contraseña" name="psw" required>
+    <input type="password" placeholder="Ingrese la contraseña" id="psw"  name="psw" required>
         
-    <button type="submit">Entrar</button>
+    <button name="submit" type="submit" onClick="login()">Entrar</button>
     <label>
       <input type="checkbox" checked="checked" name="Recuérdame"> Recuérdame
     </label>
@@ -94,6 +94,7 @@ span.psw {
     <span class="psw">¿Olvidaste tu  <a href="#">Contraseña?</a></span>
   </div>
 </form>
-
+<script src="js/init.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>
