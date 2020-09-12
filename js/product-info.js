@@ -38,4 +38,28 @@ document.addEventListener("DOMContentLoaded", function(e){
             showImagesGallery(product.images);
         }
     });
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            comments = resultObj.data;
+            let htmlContentToAppend = "";
+
+            for(let i = 0; i < comments.length; i++){
+                comment = comments[i];
+
+                htmlContentToAppend += `
+                                        <hr>
+                                        <h5>` + comment.user + `</h5>
+                                        <p>` + comment.description + `</p>
+                                       `
+
+                for(let i = 0; i < comment.score; i++){
+                    htmlContentToAppend += `
+                     <span class="fa fa-star checked"></span>
+                        `
+                }
+                document.getElementById("comments").innerHTML = htmlContentToAppend;
+            }
+        }
+    });
 });

@@ -10,6 +10,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -58,6 +59,33 @@
         <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
         </div>
       </dd>
+      <dt>Comentarios</dt>
+      <div id="comments"></div>
+      <hr>
+      <br>
+      <dt>Escribe tú comentario</dt>
+      <br>
+      <form class="form-group">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" class="form-control" placeholder="Escribe tú nombre">
+        </div>
+        <div class="form-group">
+          <label>Texto</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <p>Puntuación: </p>
+          <span class="fa fa-star" id="star1" onclick="add(this,1)"></span>
+          <span class="fa fa-star" id="star2" onclick="add(this,2)"></span>
+          <span class="fa fa-star" id="star3" onclick="add(this,3)"></span>
+          <span class="fa fa-star" id="star4" onclick="add(this,4)"></span>
+          <span class="fa fa-star" id="star5" onclick="add(this,5)"></span>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
     </dl>
     <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver más productos</a>
   </div>
@@ -84,6 +112,23 @@
 <script src="js/init.js"></script>
 <script src="js/product-info.js"></script>
 <script src="js/my-profile.js"></script>
+
+<script>
+  function add(ths,sno){
+    for (var i=1;i<=5;i++){
+      var cur=document.getElementById("star"+i)
+      cur.className="fa fa-star"
+    }
+
+    for (var i=1;i<=sno;i++){
+      var cur=document.getElementById("star"+i)
+      if(cur.className=="fa fa-star")
+      {
+        cur.className="fa fa-star checked"
+      }
+    }
+  }
+</script>
 </body>
 
 </html>
